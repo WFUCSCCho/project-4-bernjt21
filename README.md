@@ -104,7 +104,7 @@ Dataset Source: I used the dog_breeds.csv file
 
 Dataset Modifications ("None" if unchanged): I removed the columns that contained character traits, and common health problems. I did this because these files had a variety of different string lengths seperated by commas
 
-Result Analysis: My results show that for insertion takes the longest to run, especially as the dataset gets larger. For the reversed list insertion, search, and deletion all increased significantly in run time as the lists got longer. These upward trends make sense because of the average runtimes are typically O(1) but with running the operations multiple time it can cause spikes in these times to perform closer to O(n) instead.
+Result Analysis: My results show that for insertion takes the longest to run, especially as the dataset gets larger. For the reversed list insertion, search, and deletion all increased significantly in run time as the lists got longer. These upward trends make sense because of the average runtimes are typically O(1) but with running the operations multiple time it can cause spikes in these times to perform closer to O(n) instead. A larger dataset would help visualize these results as this dataset is somewhat smaller than ideal for noticing the differences.
 
 ## Submission:
 
