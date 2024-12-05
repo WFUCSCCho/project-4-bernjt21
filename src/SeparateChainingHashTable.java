@@ -44,7 +44,7 @@ public class SeparateChainingHashTable<AnyType> {
             dogList.add(x);
 
             //if table too full, rehash
-            if(theLists.length < ++currentSize){
+            if(++currentSize > theLists.length){
                 rehash();
             }
         }
