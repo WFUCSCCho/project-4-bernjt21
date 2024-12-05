@@ -82,22 +82,29 @@ it to this repository.
 
 Insertion, search, and deletion running time (already sorted):
 
-![Firefly picture of a cat 86147](https://github.com/user-attachments/assets/8b2d008e-3011-4979-97b8-fa2e9886a01a)
+<img width="357" alt="Screenshot 2024-12-05 at 9 13 15 AM" src="https://github.com/user-attachments/assets/9f1d37ba-9f40-48c2-a65e-2e566d941f0d">
 
 
 Insertion, search, and deletion running time (shuffled):
 
+<img width="358" alt="Screenshot 2024-12-05 at 9 13 35 AM" src="https://github.com/user-attachments/assets/5636d11d-c976-4bed-b116-6fa3d9c9da30">
+
+
 Insertion, search, and deletion running time (reversed):
+
+<img width="360" alt="Screenshot 2024-12-05 at 9 14 12 AM" src="https://github.com/user-attachments/assets/5e6f6f8b-e968-48aa-8686-52db56d4f1f5">
+
+
 
 ## 5. **Document your Dataset and Results**
 Document the source of your dataset and any modifications you made to it. Describe the results of your analysis and 
 how it compares to the theoretical performance of the hash table operations.
 
-Dataset Source: // FINISH ME
+Dataset Source: I used the dog_breeds.csv file 
 
-Dataset Modifications ("None" if unchanged): // FINISH ME
+Dataset Modifications ("None" if unchanged): I removed the columns that contained character traits, and common health problems. I did this because these files had a variety of different string lengths seperated by commas
 
-Result Analysis: // FINISH ME
+Result Analysis: My results show that for insertion takes the longest to run, especially as the dataset gets larger. For the reversed list insertion, search, and deletion all increased significantly in run time as the lists got longer. These upward trends make sense because of the average runtimes are typically O(1) but with running the operations multiple time it can cause spikes in these times to perform closer to O(n) instead. A larger dataset would help visualize these results as this dataset is somewhat smaller than ideal for noticing the differences.
 
 ## Submission:
 
