@@ -39,6 +39,15 @@ public class SeparateChainingHashTable<AnyType> {
      */
     public void insert(AnyType x) {
         // FINISH ME
+        List<AnyType> dogList = theLists[myhash(x)];
+        if(!dogList.contains(x)){
+            dogList.add(x);
+
+            //if table too full, rehash
+            if(++currentSize > theLists.length){
+                rehash();
+            }
+        }
     }
 
     /**
@@ -48,6 +57,11 @@ public class SeparateChainingHashTable<AnyType> {
      */
     public void remove(AnyType x) {
         // FINISH ME
+        List<AnyType> dogList = theLists[myhash(x)];
+        if(!dogList.contains(x)){
+            dogList.remove(x);
+            currentSize--;
+        }
     }
 
     /**
@@ -58,6 +72,8 @@ public class SeparateChainingHashTable<AnyType> {
      */
     public boolean contains(AnyType x) {
         // FINISH ME
+        List<AnyType> dogList = theLists[myhash(x)];
+        return dogList.contains(x);
     }
 
     /**
@@ -65,6 +81,10 @@ public class SeparateChainingHashTable<AnyType> {
      */
     public void makeEmpty() {
         // FINISH ME
+        for (int i = 0; i < theLists.length; i++) {
+            theLists[i].clear();
+        }
+        currentSize = 0;
     }
 
     /**
@@ -89,6 +109,19 @@ public class SeparateChainingHashTable<AnyType> {
 
     private void rehash() {
         // FINISH ME
+        List<AnyType>[] oldDogList = theLists;
+        //new 2x sized empty table
+        theLists = new LinkedList[nextPrime(2* theLists.length)];
+        for(int i = 0; i < theLists.length; i++){
+            theLists[i] = new LinkedList<>();
+        }
+        //copy over dogs
+        currentSize = 0;
+        for(List<AnyType> dogList : oldDogList){
+            for(AnyType x : dogList){
+                insert(x);
+            }
+        }
     }
 
     private int myhash(AnyType x) {
